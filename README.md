@@ -71,7 +71,7 @@ All servers deployed inside a custom VPC with:
 ### Prometheus Targets — All Scrapers UP
 > Prometheus successfully scraping all 4 targets: itself, monitoring node, app node, Flask app
 
-![Prometheus Targets](<img width="937" height="803" alt="Screenshot 2026-02-26 072053" src="https://github.com/user-attachments/assets/76cc1877-b0d4-4b2d-a29e-01b551f85e83" />)
+(<img width="937" height="803" alt="Screenshot 2026-02-26 072053" src="https://github.com/user-attachments/assets/76cc1877-b0d4-4b2d-a29e-01b551f85e83" />)
 
 ---
 
