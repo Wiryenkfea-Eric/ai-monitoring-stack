@@ -27,7 +27,7 @@ All infrastructure is defined in Terraform with least-privilege security groups,
 
 ## Architecture
 
-img width="1536" height="1004" alt="Design" src="https://github.com/user-attachments/assets/60e92b5c-28f7-431f-beab-a643d4437d06" 
+<img width="1536" height="1004" alt="Design" src="https://github.com/user-attachments/assets/60e92b5c-28f7-431f-beab-a643d4437d06" />
 
 ### Infrastructure Overview
 
@@ -67,29 +67,28 @@ All servers deployed inside a custom VPC with:
 ### Grafana Dashboard — Live Application Metrics
 > CPU usage gauge, P95 latency, error rate, and request rate — all pulling from Prometheus in real time
 
-img width="1899" height="860" alt="Screenshot 2026-02-26 033635" src="https://github.com/user-attachments/assets/3385808d-e85d-4906-b592-4b6381bb8e2e" 
+<<img width="1899" height="860" alt="Screenshot 2026-02-26 033635" src="https://github.com/user-attachments/assets/78be0002-58e3-4dd9-b483-334551e44e66" />/>
 
 ---
 
 ### Slack Alert — CPU Spike Detected and Auto-Resolved
 > Grafana detected CPU spike to 50.3%, fired alert to Slack at 5:12 AM, auto-resolved at 5:17 AM
 
-img width="556" height="482" alt="Screenshot 2026-02-26 063726" src="https://github.com/user-attachments/assets/d51cfc66-ce09-45fa-8226-de7f1dfb5d9c"
+<<img width="556" height="482" alt="Screenshot 2026-02-26 063726" src="https://github.com/user-attachments/assets/8733a04e-347c-46c0-be21-78e688eea6f2" />/>
 
 ---
 
 ### Prometheus Targets — All Scrapers UP
 > Prometheus successfully scraping all 4 targets: itself, monitoring node, app node, Flask app
 
-<img width="937" height="803" alt="Screenshot 2026-02-26 072053" src="https://github.com/user-attachments/assets/76cc1877-b0d4-4b2d-a29e-01b551f85e83"
+<<img width="937" height="803" alt="Screenshot 2026-02-26 072053" src="https://github.com/user-attachments/assets/7735b910-0220-45f4-9fb8-dc2eaf9a7ec9" />/>
 
 ---
 
 ### Splunk — Flask Application Logs Ingested
 > Splunk receiving real-time logs from the Flask app via Universal Forwarder over private VPC IP
 
-img width="2160" height="719" alt="Security   Application Overview" src="https://github.com/user-attachments/assets/7011a874-b2e4-4ab0-b528-a7d206c9453c"
-
+<<img width="1448" height="463" alt="Screenshot 2026-02-26 070015" src="https://github.com/user-attachments/assets/c1620abb-3ed3-4b72-b4b8-736bfd7651fc" />/>
 ---
 
 ## Deploy it yourself
