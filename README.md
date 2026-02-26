@@ -1,14 +1,5 @@
 # AI-Augmented Cloud Monitoring Stack
 
-![Stack](https://img.shields.io/badge/AWS-EC2%20%7C%20VPC-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
-![Prometheus](https://img.shields.io/badge/Prometheus-Metrics-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)
-![Grafana](https://img.shields.io/badge/Grafana-Dashboards-F46800?style=for-the-badge&logo=grafana&logoColor=white)
-![Splunk](https://img.shields.io/badge/Splunk-SIEM%20%7C%20MLTK-000000?style=for-the-badge&logo=splunk&logoColor=white)
-![Python](https://img.shields.io/badge/Python-Flask-3776AB?style=for-the-badge&logo=python&logoColor=white)
-
-**Automated AI-powered monitoring infrastructure deployed entirely as code on AWS**
-
 *Prometheus · Grafana · Splunk MLTK · Terraform · Slack Alerting*
 
 ## Key Results
@@ -26,7 +17,7 @@
 
 ## Architecture
 
-![Architecture Diagram](docs/architecture.svg)
+<img width="1536" height="1004" alt="Design" src="https://github.com/user-attachments/assets/60e92b5c-28f7-431f-beab-a643d4437d06" />
 
 ### Infrastructure Overview
 
@@ -66,32 +57,32 @@ All servers deployed inside a custom VPC with:
 ### Grafana Dashboard — Live Application Metrics
 > CPU usage gauge, P95 latency, error rate, and request rate — all pulling from Prometheus in real time
 
-![Grafana Dashboard](docs/screenshots/grafana-dashboard.png)
+![Grafana Dashboard](<img width="934" height="892" alt="Screenshot 2026-02-26 063223" src="https://github.com/user-attachments/assets/984dfc5d-0b05-475a-baf1-87ea5b4e0c09" />)
 
 ---
 
 ### Slack Alert — CPU Spike Detected and Auto-Resolved
 > Grafana detected CPU spike to 50.3%, fired alert to Slack at 5:12 AM, auto-resolved at 5:17 AM
 
-![Slack Alert](docs/screenshots/slack-alert.png)
+![Slack Alert](<img width="556" height="482" alt="Screenshot 2026-02-26 063726" src="https://github.com/user-attachments/assets/d51cfc66-ce09-45fa-8226-de7f1dfb5d9c" />)
 
 ---
 
 ### Prometheus Targets — All Scrapers UP
 > Prometheus successfully scraping all 4 targets: itself, monitoring node, app node, Flask app
 
-![Prometheus Targets](docs/screenshots/prometheus-targets.png)
+![Prometheus Targets](<img width="937" height="803" alt="Screenshot 2026-02-26 072053" src="https://github.com/user-attachments/assets/76cc1877-b0d4-4b2d-a29e-01b551f85e83" />)
 
 ---
 
 ### Splunk — Flask Application Logs Ingested
 > Splunk receiving real-time logs from the Flask app via Universal Forwarder over private VPC IP
 
-![Splunk Logs](docs/screenshots/splunk-logs.png)
+![Splunk Logs](<img width="2160" height="719" alt="Security   Application Overview" src="https://github.com/user-attachments/assets/7011a874-b2e4-4ab0-b528-a7d206c9453c" />)
 
 ---
 
-## Deploy It Yourself
+## Deploy it yourself
 
 ### Prerequisites
 
@@ -134,7 +125,7 @@ Terraform creates:
 - 3 security groups (monitoring, splunk, app)
 - 3 EC2 instances
 
-### Step 4 — Note Your Output IPs
+### Step 4 — Note your output IPs
 
 ```
 monitoring_public_ip = "x.x.x.x"
@@ -143,7 +134,7 @@ app_public_ip        = "x.x.x.x"
 app_private_ip       = "10.0.1.x"
 ```
 
-### Step 5 — Set Up App Server
+### Step 5 — Set up App Server
 
 ```bash
 ssh -i your-key.pem ec2-user@APP_PUBLIC_IP
@@ -154,7 +145,7 @@ sudo systemctl start flask-app
 sudo systemctl start node_exporter
 ```
 
-### Step 6 — Set Up Monitoring Server
+### Step 6 — Set up Monitoring Server
 
 ```bash
 ssh -i your-key.pem ec2-user@MONITORING_PUBLIC_IP
@@ -188,7 +179,7 @@ ssh -i your-key.pem ec2-user@MONITORING_PUBLIC_IP
 - `.pem` key files excluded from git
 - AWS credentials managed via `aws configure`, not embedded in code
 
-### Why This Matters
+### Why this matters
 This demonstrates zero-trust thinking applied to monitoring infrastructure — the same principles I apply to production client environments.
 
 ---
