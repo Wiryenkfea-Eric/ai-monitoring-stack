@@ -1,6 +1,4 @@
-# 🔒 AI-Augmented Cloud Monitoring Stack
-
-<div align="center">
+# AI-Augmented Cloud Monitoring Stack
 
 ![Stack](https://img.shields.io/badge/AWS-EC2%20%7C%20VPC-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
@@ -13,11 +11,7 @@
 
 *Prometheus · Grafana · Splunk MLTK · Terraform · Slack Alerting*
 
-</div>
-
----
-
-## 📊 Key Results
+## Key Results
 
 | Metric | Before | After |
 |--------|--------|-------|
@@ -30,7 +24,7 @@
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ![Architecture Diagram](docs/architecture.svg)
 
@@ -50,7 +44,7 @@ All servers deployed inside a custom VPC with:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Category | Tool | Purpose |
 |----------|------|---------|
@@ -67,7 +61,7 @@ All servers deployed inside a custom VPC with:
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Grafana Dashboard — Live Application Metrics
 > CPU usage gauge, P95 latency, error rate, and request rate — all pulling from Prometheus in real time
@@ -97,7 +91,7 @@ All servers deployed inside a custom VPC with:
 
 ---
 
-## 🚀 Deploy It Yourself
+## Deploy It Yourself
 
 ### Prerequisites
 
@@ -180,7 +174,7 @@ ssh -i your-key.pem ec2-user@MONITORING_PUBLIC_IP
 
 ---
 
-## 🔐 Security Design Decisions
+## Security Design Decisions
 
 ### Network Security
 - **SSH restricted to `/32`** — only the engineer's exact IP can SSH. No `0.0.0.0/0` SSH rules anywhere.
@@ -199,7 +193,7 @@ This demonstrates zero-trust thinking applied to monitoring infrastructure — t
 
 ---
 
-## 🤖 AI/ML Anomaly Detection
+## AI/ML Anomaly Detection
 
 The Splunk Machine Learning Toolkit (MLTK) adds genuine AI capability to this stack:
 
@@ -220,7 +214,7 @@ This is the same approach used in production AIOps environments — applying ML 
 
 ---
 
-## 🔥 Incident Simulations
+## Incident Simulations
 
 ### CPU Stress Test
 ```bash
@@ -251,7 +245,7 @@ ssh wronguser@APP_PUBLIC_IP  # intentional failure
 
 ---
 
-## 💰 Cost Analysis
+## Cost Analysis
 
 | Resource | Type | Running Cost | Stopped Cost |
 |----------|------|-------------|--------------|
@@ -275,7 +269,7 @@ aws ec2 start-instances --instance-ids i-xxx i-yyy i-zzz
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ai-monitoring-stack/
@@ -301,7 +295,7 @@ ai-monitoring-stack/
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - [ ] **HashiCorp Vault** — centralized secrets management, dynamic credentials for PostgreSQL
 - [ ] **EKS Cluster Monitoring** — kube-state-metrics, pod-level observability
@@ -314,27 +308,4 @@ ai-monitoring-stack/
 
 ---
 
-## 👤 Author
-
-**Eric Nyuydze Wiryenkfea**
-Cloud & DevOps Engineer | AWS | Azure | DevSecOps | IaC
-
-- 🌍 [LinkedIn](https://www.linkedin.com/in/eric-nyuydze-wiryenkfea-198862162)
-- 💻 [GitHub](https://github.com/YOUR_USERNAME)
-- 🎤 Speaker: HashiTalks Africa · ALX Africa · Bincom Dev Center
-
----
-
-## 📄 License
-
-MIT License — free to use, modify, and distribute with attribution.
-
----
-
-<div align="center">
-
 ⭐ **Star this repo if it helped you** ⭐
-
-*Built to demonstrate senior-level cloud security and monitoring skills*
-
-</div>
