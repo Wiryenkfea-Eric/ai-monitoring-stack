@@ -57,7 +57,7 @@ All servers deployed inside a custom VPC with:
 ### Grafana Dashboard — Live Application Metrics
 > CPU usage gauge, P95 latency, error rate, and request rate — all pulling from Prometheus in real time
 
-(<img width="934" height="892" alt="Screenshot 2026-02-26 063223" src="https://github.com/user-attachments/assets/984dfc5d-0b05-475a-baf1-87ea5b4e0c09" />)
+(<<img width="1899" height="860" alt="Screenshot 2026-02-26 033635" src="https://github.com/user-attachments/assets/3385808d-e85d-4906-b592-4b6381bb8e2e" />>)
 
 ---
 
