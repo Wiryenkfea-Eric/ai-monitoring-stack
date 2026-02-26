@@ -57,14 +57,14 @@ All servers deployed inside a custom VPC with:
 ### Grafana Dashboard — Live Application Metrics
 > CPU usage gauge, P95 latency, error rate, and request rate — all pulling from Prometheus in real time
 
-![Grafana Dashboard](<img width="934" height="892" alt="Screenshot 2026-02-26 063223" src="https://github.com/user-attachments/assets/984dfc5d-0b05-475a-baf1-87ea5b4e0c09" />)
+(<img width="934" height="892" alt="Screenshot 2026-02-26 063223" src="https://github.com/user-attachments/assets/984dfc5d-0b05-475a-baf1-87ea5b4e0c09" />)
 
 ---
 
 ### Slack Alert — CPU Spike Detected and Auto-Resolved
 > Grafana detected CPU spike to 50.3%, fired alert to Slack at 5:12 AM, auto-resolved at 5:17 AM
 
-![Slack Alert](<img width="556" height="482" alt="Screenshot 2026-02-26 063726" src="https://github.com/user-attachments/assets/d51cfc66-ce09-45fa-8226-de7f1dfb5d9c" />)
+(<img width="556" height="482" alt="Screenshot 2026-02-26 063726" src="https://github.com/user-attachments/assets/d51cfc66-ce09-45fa-8226-de7f1dfb5d9c" />)
 
 ---
 
@@ -78,7 +78,7 @@ All servers deployed inside a custom VPC with:
 ### Splunk — Flask Application Logs Ingested
 > Splunk receiving real-time logs from the Flask app via Universal Forwarder over private VPC IP
 
-![Splunk Logs](<img width="2160" height="719" alt="Security   Application Overview" src="https://github.com/user-attachments/assets/7011a874-b2e4-4ab0-b528-a7d206c9453c" />)
+(<img width="2160" height="719" alt="Security   Application Overview" src="https://github.com/user-attachments/assets/7011a874-b2e4-4ab0-b528-a7d206c9453c" />)
 
 ---
 
