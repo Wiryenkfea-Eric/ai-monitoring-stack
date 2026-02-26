@@ -2,6 +2,16 @@
 
 *Prometheus · Grafana · Splunk MLTK · Terraform · Slack Alerting*
 
+## Description
+
+This project deploys a production-grade, AI-augmented monitoring stack entirely as infrastructure as code on AWS. Three EC2 instances are provisioned with Terraform inside a custom VPC — a monitoring server running Prometheus and Grafana, a dedicated Splunk server with the Machine Learning Toolkit, and an application server running a instrumented Flask API.
+
+Prometheus scrapes metrics from all nodes every 15 seconds via Node Exporter and a custom /metrics endpoint on the Flask app. Grafana visualises those metrics across four live dashboard panels — CPU usage, P95 latency, error rate, and request rate — and fires real-time alerts to Slack when thresholds are breached. The stack detected a CPU spike to 50.3% during a stress test and sent a Slack alert within 3 minutes, then automatically resolved it when the load dropped.
+
+On the log analysis side, a Splunk Universal Forwarder ships Flask application logs and Linux audit logs from the app server to Splunk Enterprise over the private VPC network. The Splunk Machine Learning Toolkit runs a DensityFunction anomaly detection model that flags traffic patterns outside the 95th percentile — the same approach used in production AIOps environments to reduce alert fatigue and catch subtle signals that threshold-based alerting misses.
+
+All infrastructure is defined in Terraform with least-privilege security groups, SSH restricted to a single engineer IP, and no credentials stored in source code. The result is a monitoring stack that reduced mean time to detection from 25 minutes of manual log review to 5 minutes of automated alerting.
+
 ## Key Results
 
 | Metric | Before | After |
@@ -17,7 +27,7 @@
 
 ## Architecture
 
-<img width="1536" height="1004" alt="Design" src="https://github.com/user-attachments/assets/60e92b5c-28f7-431f-beab-a643d4437d06" />
+img width="1536" height="1004" alt="Design" src="https://github.com/user-attachments/assets/60e92b5c-28f7-431f-beab-a643d4437d06" 
 
 ### Infrastructure Overview
 
@@ -57,28 +67,28 @@ All servers deployed inside a custom VPC with:
 ### Grafana Dashboard — Live Application Metrics
 > CPU usage gauge, P95 latency, error rate, and request rate — all pulling from Prometheus in real time
 
-(<<img width="1899" height="860" alt="Screenshot 2026-02-26 033635" src="https://github.com/user-attachments/assets/3385808d-e85d-4906-b592-4b6381bb8e2e" />>)
+img width="1899" height="860" alt="Screenshot 2026-02-26 033635" src="https://github.com/user-attachments/assets/3385808d-e85d-4906-b592-4b6381bb8e2e" 
 
 ---
 
 ### Slack Alert — CPU Spike Detected and Auto-Resolved
 > Grafana detected CPU spike to 50.3%, fired alert to Slack at 5:12 AM, auto-resolved at 5:17 AM
 
-(<img width="556" height="482" alt="Screenshot 2026-02-26 063726" src="https://github.com/user-attachments/assets/d51cfc66-ce09-45fa-8226-de7f1dfb5d9c" />)
+img width="556" height="482" alt="Screenshot 2026-02-26 063726" src="https://github.com/user-attachments/assets/d51cfc66-ce09-45fa-8226-de7f1dfb5d9c"
 
 ---
 
 ### Prometheus Targets — All Scrapers UP
 > Prometheus successfully scraping all 4 targets: itself, monitoring node, app node, Flask app
 
-(<img width="937" height="803" alt="Screenshot 2026-02-26 072053" src="https://github.com/user-attachments/assets/76cc1877-b0d4-4b2d-a29e-01b551f85e83" />)
+<img width="937" height="803" alt="Screenshot 2026-02-26 072053" src="https://github.com/user-attachments/assets/76cc1877-b0d4-4b2d-a29e-01b551f85e83"
 
 ---
 
 ### Splunk — Flask Application Logs Ingested
 > Splunk receiving real-time logs from the Flask app via Universal Forwarder over private VPC IP
 
-(<img width="2160" height="719" alt="Security   Application Overview" src="https://github.com/user-attachments/assets/7011a874-b2e4-4ab0-b528-a7d206c9453c" />)
+img width="2160" height="719" alt="Security   Application Overview" src="https://github.com/user-attachments/assets/7011a874-b2e4-4ab0-b528-a7d206c9453c"
 
 ---
 
