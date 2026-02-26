@@ -4,11 +4,11 @@
 
 ## Description
 
-This project deploys a production-grade, AI-augmented monitoring stack entirely as infrastructure as code on AWS. Three EC2 instances are provisioned with Terraform inside a custom VPC — a monitoring server running Prometheus and Grafana, a dedicated Splunk server with the Machine Learning Toolkit, and an application server running a instrumented Flask API.
+This project deploys a production-grade, AI-augmented monitoring stack entirely as infrastructure as code on AWS. Three EC2 instances are provisioned with Terraform inside a custom VPC, a monitoring server running Prometheus and Grafana, a dedicated Splunk server with the Machine Learning Toolkit, and an application server running a instrumented Flask API.
 
-Prometheus scrapes metrics from all nodes every 15 seconds via Node Exporter and a custom /metrics endpoint on the Flask app. Grafana visualises those metrics across four live dashboard panels — CPU usage, P95 latency, error rate, and request rate — and fires real-time alerts to Slack when thresholds are breached. The stack detected a CPU spike to 50.3% during a stress test and sent a Slack alert within 3 minutes, then automatically resolved it when the load dropped.
+Prometheus scrapes metrics from all nodes every 15 seconds via Node Exporter and a custom /metrics endpoint on the Flask app. Grafana visualises those metrics across four live dashboard panels, CPU usage, P95 latency, error rate, and request rate  and fires real-time alerts to Slack when thresholds are breached. The stack detected a CPU spike to 50.3% during a stress test and sent a Slack alert within 3 minutes, then automatically resolved it when the load dropped.
 
-On the log analysis side, a Splunk Universal Forwarder ships Flask application logs and Linux audit logs from the app server to Splunk Enterprise over the private VPC network. The Splunk Machine Learning Toolkit runs a DensityFunction anomaly detection model that flags traffic patterns outside the 95th percentile — the same approach used in production AIOps environments to reduce alert fatigue and catch subtle signals that threshold-based alerting misses.
+On the log analysis side, a Splunk Universal Forwarder ships Flask application logs and Linux audit logs from the app server to Splunk Enterprise over the private VPC network. The Splunk Machine Learning Toolkit runs a DensityFunction anomaly detection model that flags traffic patterns outside the 95th percentile, the same approach used in production AIOps environments to reduce alert fatigue and catch subtle signals that threshold-based alerting misses.
 
 All infrastructure is defined in Terraform with least-privilege security groups, SSH restricted to a single engineer IP, and no credentials stored in source code. The result is a monitoring stack that reduced mean time to detection from 25 minutes of manual log review to 5 minutes of automated alerting.
 
