@@ -27,7 +27,7 @@ All infrastructure is defined in Terraform with least-privilege security groups,
 
 ## Architecture
 
-<img width="1536" height="1004" alt="Design" src="https://github.com/user-attachments/assets/60e92b5c-28f7-431f-beab-a643d4437d06" />
+<<img width="1536" height="1004" alt="Design (2)" src="https://github.com/user-attachments/assets/31bdeeb2-d98f-4a06-bd4b-6faaa4f0f56d" />/>
 
 ### Infrastructure Overview
 
